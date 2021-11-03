@@ -1,0 +1,46 @@
+#responseText{
+    max-height: 500px;
+}
+
+@media only screen and (max-width: 600px) {
+    #addParameter,.deleteParams{
+        width: 100%;
+    }
+    .keyBox,.valueBox{
+        margin: 3px 0;
+    }
+    .btnBox{
+        margin-bottom: 20px;
+    }
+    .submitbtn{
+       display: flex;
+       justify-content: center;
+    }
+  }
+
+  @media only screen and (max-width: 400px){
+    
+      .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .subHead{
+        font-size: 18px;
+      }
+      .que{
+          font-size: 20px;
+      }
+      #headerText,.ans{
+        font-size: 13px;
+      }
+      #responseText{
+          font-size: 12px;
+      }
+      #contactBox{
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+      }
+  }

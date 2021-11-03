@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="postmaster is free API testing Tool,user can request get and post method in this using url and many more features are given,check it once....">
+  <meta name="keywords" content="API,api testing,javascript,GET,POST">
+  <meta name="author" content="Aakash Dave">
+    <title>POSTmaster</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="https://kit.fontawesome.com/c096fa5e26.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">POSTmaster</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#about">about</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- main container -->
+      <div class="container">
+          <div class="heading">
+            <div class="logo"><h1 class="display-3">POST<small class="text-muted">master</small></h1>
+              <h4 class="subHead"><small class="text-muted">Online API Testing Tool for devlopers</small></h4>
+            </div>
+            <p id="headerText">POSTmaster API Tester is a free online API testing tool. Test your API, website or web service by sending REST and HTTP API requests right from your browser, and check the server responses. <br>
+              Test APIs, websites and web services online,
+              Post requests directly from your browser,
+              Share and discuss your requests online,
+              Load test APIs and websites</p>
+            <h5 class="text-center">Test your API</h5>
+          </div>
+         
+          <p class="h6">METHODS</p>
+          <div class="form-check ">
+            
+            <input class="form-check-input" type="radio" name="requestType" value="GET" id="getReq" checked>
+            <label class="form-check-label" for="getReq">
+              GET
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio" value="POST" name="requestType" id="postReq">
+            <label class="form-check-label" for="postReq">
+              POST
+            </label>
+          </div>
+
+            <p class="h6">URL</p>
+            <input type="text" class="form-control mb-3" id="url" aria-label="Text input with dropdown button" placeholder="i.e. https://google.com">
+          
+          <!-- content type -->
+          <div id="contentbox">
+          <p class="h6">Content Type</p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" value="json" name="contentType" id="jsonRadio" checked>
+            <label class="form-check-label"  for="jsonRadio">
+              JSON
+            </label>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="radio"  value="param" name="contentType" id="parameterRadio">
+            <label class="form-check-label"for="parameterRadio">
+              Custom Parameters
+            </label>
+          </div>
+        </div>
+          <!-- json request -->
+          <div id="jsonBox" class="form-floating mb-3">
+            <textarea class="form-control" placeholder="JSON write here" id="jsonRe" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">JSON</label>
+          </div>
+
+          <!-- parameters -->
+          <div id="parameterBox" class="parameterBox mb-3">
+          <p class="h6">Parameters</p>
+          <div class="row mb-2" id="paramList">
+            <div class="col-sm-5 keyBox">
+              <input type="text" class="form-control" id="parameterKey1" placeholder="key" aria-label="First name">
+            </div>
+            <div class="col-sm-5 valueBox">
+              <input type="text" class="form-control" id="parameterValue1" placeholder="value" aria-label="Last name">
+            </div>
+            <div class="col-sm-2 btnBox">
+            <button id="addParameter" class="btn btn-outline-primary"> + </button>
+            </div>
+          </div>
+          <div class="params" id="params"></div>
+          </div>
+
+          <div class="submitbtn mb-3">
+          <button type="button" id="submit" class="btn btn-primary btn-lg">SUBMIT</button>
+          </div>
+
+          <div class="response mb-5">
+            <p class="h6">Response:</p>
+            <pre class="language-javascript"><code id="responseText" class="language-javascript">Your response will print here</code>
+            </pre>
+          </div>
+      </div>
+
+      <hr>
+
+      <section id="about" class="about container bg-light mb-5">
+        <div class="text-center">
+          <h1>ABOUT</h1>
+        </div>
+        <div class="question">
+          <h2 class="que"><small class="text-muted">What is API?</small></h2>
+          <p class="ans">API (Application Programming Interface) is a computing interface that defines how software components interact with each other. It is a way of programmatically interacting with a separate software component or resource and expose functionality for internal or external use and testing. API defines what requests can be made, how they will be made and hides complexity from developers. API extends systems to partners, organizes code, and makes components reusable.</p>
+       
+          <h2 class="que"><small class="text-muted">What is API testing?</small></h2>
+          <p class="ans">API testing is a set of quality assurance actions that include making calls to an API endpoint, getting API responses, and validating API status codes, response times, and data against predefined rules. API testing is usually performed by a software tool or web service and mainly focuses on testing the business logic layer.</p>
+      
+          <h2 class="que"><small class="text-muted">Why is API Testing Important?</small></h2>
+          <p class="ans">API testing determines whether the API meets expectations for functionality, reliability, performance, and security. API testing is essential for the entire development, implementation and maintenance of APIs. API testing is necessary to accompany the API to make it functional and ready for its purpose.</p>
+         
+          <h2 class="que"><small class="text-muted">How to use this Tool?</small></h2>
+          <p class="ans">There are methos,Url,content Type,request type are given.
+            methods are get and post.In url section user have to put url.There are two type of content are given 1.json & 2.custom parameters.
+            Your response are print in those response section. 
+          </p>
+        </div>
+      </section>
+      
+      <hr>
+
+      <section id="contact" class="contact container-fluid bg-dark text-white">
+        <div class="text-center">
+          <h1>Contact Us</h1>
+        </div>
+        <div id="contactBox" class="contact-session d-flex p-2 justify-content-around">
+          <div class="part1">
+            <h5><small class="text-muted">Devloper:Aakash Dave</small></h5>
+          </div>
+          <div class="part1">
+            <h5><small class="text-muted">social Media</small></h5>
+            <a href="https://www.instagram.com/__aakash_dave__/" target="_blank"  rel="noopener">
+            <i class="fa fa-instagram fa-2x text-white me-4"></i>
+            </a>
+            <a target="_blank" href="mailto: aakashdave21@gmail.com">
+              <i class="fas fa-envelope-square fa-2x text-white"></i></a>
+          </div>
+        </div>
+      </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
+    <script src="index.js"></script>
+    <script src="prism.js"></script>
+  
+</body>
+</html>
